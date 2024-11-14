@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -16,12 +17,9 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function() {
-    return Inertia::render('Index');
-})->name('posts.index');
-Route::get('/{id}', function() {
-    return Inertia::render('Show');
-})->name('posts.show');
+Route::get('/', [PostController::class, 'index'])->name('posts.index');
+Route::get('/{post}', [PostController::class, 'show'])->name('posts.show');
+Route::post('/', [PostController::class, 'store'])->name('posts.store');
 
 // Route::get('/', function () {
 //     return Inertia::render('Welcome', [
