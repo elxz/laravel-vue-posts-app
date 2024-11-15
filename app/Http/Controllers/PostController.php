@@ -11,6 +11,7 @@ class PostController extends BaseController
 {
     function index() {
         $posts = PostResource::collection(Post::all());
+
         return Inertia::render('Index', ['posts' => $posts]);
     }
 
@@ -22,5 +23,19 @@ class PostController extends BaseController
 
     function store(PostRequest $request) {
         Post::firstOrCreate(['title' => $request->input('title')], $request->validated());
+
+        return redirect()->route('posts.index');
+    }
+
+    function update(PostRequest $request, Post $post) {
+        $post->update($request->validated());
+
+        return redirect()->route('posts.index');
+    }
+
+    function destroy(Post $post) {
+        $post->delete();
+
+        return redirect()->route('posts.index');
     }
 }
