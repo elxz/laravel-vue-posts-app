@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="shading.isVisible"
-    @click.self="shading.toggleVisible()"
+    @mousedown.self="shading.toggleVisible()"
     class="fixed flex top-0 left-0 h-full w-full bg-black z-10 bg-opacity-75"
   >
     <slot></slot>

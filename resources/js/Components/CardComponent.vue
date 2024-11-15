@@ -3,7 +3,7 @@
     <div
       class="px-8 py-4 flex justify-between items-center border rounded-xl cursor-pointer hover:-translate-y-1 hover:shadow-md transition-all"
     >
-      <h3 class="font-bold text-xl break-words">{{ title }}</h3>
+      <h3 class="w-10/12 font-bold text-xl break-words">{{ title }}</h3>
       <UserComponent :user="user_id"></UserComponent>
     </div>
   </Link>
