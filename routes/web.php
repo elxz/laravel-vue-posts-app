@@ -20,6 +20,8 @@ use Inertia\Inertia;
 Route::get('/', [PostController::class, 'index'])->name('posts.index');
 Route::get('/{post}', [PostController::class, 'show'])->name('posts.show');
 Route::post('/', [PostController::class, 'store'])->name('posts.store');
+Route::put('/{post}', [PostController::class, 'update'])->name('posts.update');
+Route::delete('/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
 
 // Route::get('/', function () {
 //     return Inertia::render('Welcome', [

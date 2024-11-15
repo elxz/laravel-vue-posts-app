@@ -15,7 +15,7 @@
         <input
           class="rounded outline-none border-gray-300 bg-gray-100 focus:ring-0 focus:border-indigo-400 w-72"
           type="text"
-          placeholder="Поиск..."
+          placeholder="Search..."
         />
       </div>
       <div class="mt-8 flex flex-col gap-8">
